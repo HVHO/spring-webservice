@@ -26,6 +26,7 @@ public class PostsService {
         Posts posts = postsRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Cann't find such post. id="+id));
 
         posts.update(requestDto.getTitle(),requestDto.getContent());
+        postsRepository.flush();
 
         return id;
     }
