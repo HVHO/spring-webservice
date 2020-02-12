@@ -1,4 +1,4 @@
-package com.hvho1119.springboot.web.domain.posts;
+package com.hvho1119.springboot.domain.posts;
 
 import com.hvho1119.springboot.domain.posts.Posts;
 import com.hvho1119.springboot.domain.posts.PostsRepository;
