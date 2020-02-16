@@ -27,7 +27,7 @@ var main = {
             contentType:'application/json; charset=utf-8',
             data: JSON.stringify(data)
         }).done(function() {
-            alert('글이 등록되었습니다.');
+            alert('Post uploaded.');
             window.location.href = '/';
         }).fail(function (error) {
             alert(JSON.stringify(error));
@@ -36,6 +36,7 @@ var main = {
     update : function () {
         var data = {
             title: $('#title').val(),
+            // author: $('#author').val(),
             content: $('#content').val()
         };
 
@@ -43,14 +44,14 @@ var main = {
 
         $.ajax({
             type: 'PUT',
-            url: '/api/v1/posts/'+id,
+            url:'/api/v1/posts/'+ id,
             dataType: 'json',
             contentType:'application/json; charset=utf-8',
             data: JSON.stringify(data)
         }).done(function() {
-            alert('글이 수정되었습니다.');
+            alert('Post updated.');
             window.location.href = '/';
-        }).fail(function (error) {
+        }).fail(function(error) {
             alert(JSON.stringify(error));
         });
     },
@@ -59,15 +60,16 @@ var main = {
 
         $.ajax({
             type: 'DELETE',
-            url: '/api/v1/posts/'+id,
+            url:'/api/v1/posts/'+id,
             dataType: 'json',
-            contentType:'application/json; charset=utf-8'
+            contentType:'application/json, charset=utf-8'
         }).done(function() {
-            alert('글이 삭제되었습니다.');
-            window.location.href = '/';
-        }).fail(function (error) {
+            alert('Post deleted.');
+            window.location.href ='/';
+        }).fail(function(error) {
             alert(JSON.stringify(error));
         });
+
     }
 
 };

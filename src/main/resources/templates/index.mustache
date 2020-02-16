@@ -7,6 +7,29 @@
                 <a href="/posts/save" role="button" class="btn btn-primary"/> Make Post </a>
             </div>
         </div>
+        <br>
+        <!------ Post list ------>
+        <table class="table table-horizontal table-bordered">
+            <thead class="thead-strong">
+                <tr>
+                    <th>Post index</th>
+                    <th>title</th>
+                    <th>author</th>
+                    <th>last modified date</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+            {{#posts}}
+                <tr>
+                    <td>{{id}}</td>
+                    <td><a href="/posts/update/{{id}}">{{title}}</a></td>
+                    <td>{{title}}</td>
+                    <td>{{author}}</td>
+                    <td>{{modifiedDate}}</td>
+                </tr>
+            {{/posts}}
+            </tbody>
+        </table>
     </div>
 
 

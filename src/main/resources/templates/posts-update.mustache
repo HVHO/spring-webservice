@@ -1,0 +1,33 @@
+{{>layout/header}}
+
+<h1>Edit Post</h1>
+
+<div class="col-md-12">
+    <div class="col-md-4">
+        <from>
+            <div class="form-group">
+                <label for="title">Post Index</label>
+                <input type="text" class="form-control" id="id" value="{{post.id}}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" id="title" value="{{post.title}}">
+            </div>
+            <div class="form-group">
+                <label for="author">Author</label>
+                <input type="text" class="form-control" id="author" value="{{post.author}}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="content">Content</label>
+                <textarea class=form-control" id="content">{{post.content}}</textarea>
+             </div>
+        </from>
+        <a href="/" role="button" class="btn btn-secondary">Cancel</a>
+        <button type="button" class="btn btn-primary" id="btn-update">Submit Update</button>
+        <button type="button" class="btn btn-danger" id="btn-delete">Post Delete</button>
+     </div>
+
+</div>
+
+
+{{>layout/footer}}
