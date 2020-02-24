@@ -1,5 +1,6 @@
 package com.hvho1119.springboot.web;
 
+import com.hvho1119.springboot.config.auth.LoginUser;
 import com.hvho1119.springboot.config.auth.dto.SessionUser;
 import com.hvho1119.springboot.domain.user.User;
 import com.hvho1119.springboot.service.posts.PostsService;
@@ -22,9 +23,9 @@ public class IndexController {
     private final HttpSession httpSession;
 
     @GetMapping("/")
-    public String index(Model model) {
+    public String index(Model model, @LoginUser SessionUser user) {
         model.addAttribute("posts", postsService.findAllDesc());
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+//        SessionUser user = (SessionUser) httpSession.getAttribute("user");
 
         if(user != null) {
             model.addAttribute("userName", user.getName());
