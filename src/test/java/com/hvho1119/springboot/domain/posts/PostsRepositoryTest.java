@@ -1,8 +1,6 @@
 package com.hvho1119.springboot.domain.posts;
 
-import com.hvho1119.springboot.domain.posts.Posts;
-import com.hvho1119.springboot.domain.posts.PostsRepository;
-import javafx.geometry.Pos;
+
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
