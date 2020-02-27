@@ -13,10 +13,25 @@ cache:
 
 script: "./gradlew clean build"
 
+
+before_deploy:
+  - zip -r spring-webservice *
+  - mkdir -p deploy
+  - mv spring-webservice.zip deploy/spring-webservice.zip
+
+deploy:
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: hvho-spring-webservice-build
+    region: ap-northeast-2
+    skip_cleanup: true
+    acl: private
+    local_dir: deploy
+    wait_until_deployed: true
+
 #send email after CI build
 notifications:
   email:
     recipients:
       - hvho1119@gmail.com
-
-
